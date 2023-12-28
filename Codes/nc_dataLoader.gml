@@ -1,0 +1,1 @@
+﻿ global.neoconsole_enabled = 0
