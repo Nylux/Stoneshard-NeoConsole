@@ -17,6 +17,7 @@ public class NeoConsole : Mod
 
     public override void PatchMod()
     {
+        ModLoader.InsertDecompiledCode("var o_neoconsole = asset_get_index(\"o_neoconsole\")", "ScriptEngine_create", 1);
         LoadNeoConsoleScripts();
         InitNeoConsole();
         //IsolateInput();
@@ -32,7 +33,11 @@ public class NeoConsole : Mod
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_1help.gml"), "scr_neoconsole_help");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_enable.gml"), "scr_neoconsole_enable");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_init.gml"), "scr_neoconsole_init");
+        
         // STAGE 2 : REQUIRED
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_s2r_nan.gml"), "scr_neoconsole_s2r_nan");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_UI_visible.gml"), "scr_neoconsole_UI_visible");
+        
         // STAGE 3 : BASE
         // STAGE 4 : POST
     }
