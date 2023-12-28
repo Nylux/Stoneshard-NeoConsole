@@ -5,21 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="183b2c07-804a-4c40-b9ba-7d1d2438d1d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_UI_visible.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_s2r_nan.gml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_actionsLog.gml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_allskills.gml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_boost.gml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeoConsole.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeoConsole.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_alarm0Event.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_alarm0Event.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_createEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_createEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_dataLoader.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_dataLoader.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_destroyEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_destroyEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_drawGUIEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_drawGUIEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_persistentRoomController.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_persistentRoomController.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_sessionDataInit.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_sessionDataInit.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/nc_stepEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Core/nc_stepEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/scr_neoconsole_0log.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_0log.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/scr_neoconsole_1help.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_1help.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/scr_neoconsole_enable.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_enable.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/scr_neoconsole_init.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_init.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_alarm0Event.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_alarm0Event.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_createEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_createEvent.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_dataLoader.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_dataLoader.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_destroyEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_destroyEvent.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_drawGUIEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_drawGUIEvent.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_persistentRoomController.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_persistentRoomController.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_sessionDataInit.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_sessionDataInit.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_stepEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_stepEvent.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_0log.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_0log.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_1help.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_1help.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_UI_visible.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Required/scr_neoconsole_UI_visible.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_enable.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_enable.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_init.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_init.gml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_s2r_nan.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Required/scr_neoconsole_s2r_nan.gml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NeoConsole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NeoConsole.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
     </list>
@@ -79,7 +82,7 @@
       <updated>1703535408981</updated>
       <workItem from="1703535410054" duration="235000" />
       <workItem from="1703592092244" duration="7133000" />
-      <workItem from="1703720989863" duration="21560000" />
+      <workItem from="1703720989863" duration="24585000" />
     </task>
     <servers />
   </component>

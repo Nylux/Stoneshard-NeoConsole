@@ -2,7 +2,6 @@
 using ModShardLauncher;
 using ModShardLauncher.Mods;
 using UndertaleModLib.Models;
-using System.IO;
 
 namespace NeoConsole;
 
@@ -11,16 +10,15 @@ public class NeoConsole : Mod
 {
     public override string Name => "NeoConsole";
     public override string Author => "Nylux";
-    public override string Description => "Enables a developer console to cheat or test things with.";
-    public override string Version => "1.0.0";
+    public override string Description => "Enables a developer console to cheat or test things with or debug your mods.";
+    public override string Version => "1.1.0";
     
 
     public override void PatchMod()
     {
-        ModLoader.InsertDecompiledCode("var o_neoconsole = asset_get_index(\"o_neoconsole\")", "ScriptEngine_create", 1);
         LoadNeoConsoleScripts();
         InitNeoConsole();
-        //IsolateInput();
+        //IsolateInput(); // Requires assembly editing, which is unsupported rn
     }
 
     /// <summary>
@@ -39,7 +37,66 @@ public class NeoConsole : Mod
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_UI_visible.gml"), "scr_neoconsole_UI_visible");
         
         // STAGE 3 : BASE
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_actionsLog.gml"), "scr_neoconsole_actionslog");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_allskills.gml"), "scr_neoconsole_allskills");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_boost.gml"), "scr_neoconsole_boost");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_buff.gml"), "scr_neoconsole_buff");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_butcher.gml"), "scr_neoconsole_butcher");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_clear.gml"), "scr_neoconsole_clear");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_clear_steam.gml"), "scr_neoconsole_clear_steam");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_condition.gml"), "scr_neoconsole_condition");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_consolesize.gml"), "scr_neoconsole_consolesize");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_damage.gml"), "scr_neoconsole_damage");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_debugmap.gml"), "scr_neoconsole_debugmap");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_devcam.gml"), "scr_neoconsole_devcam");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_devinfo.gml"), "scr_neoconsole_devinfo");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_drop.gml"), "scr_neoconsole_drop");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_dsDebugger.gml"), "scr_neoconsole_dsDebugger");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_enemyinfo.gml"), "scr_neoconsole_enemyinfo");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_exit.gml"), "scr_neoconsole_exit");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_fadeinfo.gml"), "scr_neoconsole_fadeinfo");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_find.gml"), "scr_neoconsole_find");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_fog.gml"), "scr_neoconsole_fog");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_getassetid.gml"), "scr_neoconsole_getassetid");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_getobjectname.gml"), "scr_neoconsole_getobjectname");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_getseed.gml"), "scr_neoconsole_getseed");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_getxp.gml"), "scr_neoconsole_getxp");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_globalset.gml"), "scr_neoconsole_globalset");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_godmode.gml"), "scr_neoconsole_godmode");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_injury.gml"), "scr_neoconsole_injury");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_killboss.gml"), "scr_neoconsole_killboss");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_load.gml"), "scr_neoconsole_load");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_locate_traps.gml"), "scr_neoconsole_locate_traps");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_mapstat.gml"), "scr_neoconsole_mapstat");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_minimap.gml"), "scr_neoconsole_minimap");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_nocd.gml"), "scr_neoconsole_nocd");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_nodeathmode.gml"), "scr_neoconsole_nodeathmode");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_npc_animation.gml"), "scr_neoconsole_npc_animation");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_overlay.gml"), "scr_neoconsole_overlay");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_preset.gml"), "scr_neoconsole_preset");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_psy.gml"), "scr_neoconsole_psy");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_questnexttarget.gml"), "scr_neoconsole_questnexttarget");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_questsettarget.gml"), "scr_neoconsole_questsettarget");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_reputation.gml"), "scr_neoconsole_reputation");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_room.gml"), "scr_neoconsole_room");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_save.gml"), "scr_neoconsole_save");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_setatr.gml"), "scr_neoconsole_setatr");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_setcaravan.gml"), "scr_neoconsole_setcaravan");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_sethp.gml"), "scr_neoconsole_sethp");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_setmp.gml"), "scr_neoconsole_setmp");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_sightplacelist.gml"), "scr_neoconsole_sightplacelist");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_skilltest.gml"), "scr_neoconsole_skilltest");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_spawn.gml"), "scr_neoconsole_spawn");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_spriteorigin.gml"), "scr_neoconsole_spriteorigin");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_time_scale.gml"), "scr_neoconsole_time_scale");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_tp.gml"), "scr_neoconsole_tp");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_unlock_steam.gml"), "scr_neoconsole_unlock_steam");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_warp.gml"), "scr_neoconsole_warp");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_weather.gml"), "scr_neoconsole_weather");
+        
         // STAGE 4 : POST
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_lvl.gml"), "scr_neoconsole_lvl");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_time_change.gml"), "scr_neoconsole_time_change");
     }
 
     /// <summary>
