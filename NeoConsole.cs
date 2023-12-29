@@ -11,7 +11,7 @@ public class NeoConsole : Mod
     public override string Name => "NeoConsole";
     public override string Author => "Nylux";
     public override string Description => "Enables a developer console to cheat or test things with or debug your mods.";
-    public override string Version => "1.1.0";
+    public override string Version => "1.1.1";
     
 
     public override void PatchMod()
@@ -43,7 +43,6 @@ public class NeoConsole : Mod
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_buff.gml"), "scr_neoconsole_buff");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_butcher.gml"), "scr_neoconsole_butcher");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_clear.gml"), "scr_neoconsole_clear");
-       // ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_clear_steam.gml"), "scr_neoconsole_clear_steam");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_condition.gml"), "scr_neoconsole_condition");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_consolesize.gml"), "scr_neoconsole_consolesize");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_damage.gml"), "scr_neoconsole_damage");
@@ -90,7 +89,6 @@ public class NeoConsole : Mod
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_spriteorigin.gml"), "scr_neoconsole_spriteorigin");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_time_scale.gml"), "scr_neoconsole_time_scale");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_tp.gml"), "scr_neoconsole_tp");
-        //ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_unlock_steam.gml"), "scr_neoconsole_unlock_steam");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_warp.gml"), "scr_neoconsole_warp");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_weather.gml"), "scr_neoconsole_weather");
         

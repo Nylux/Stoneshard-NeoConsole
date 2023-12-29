@@ -4,83 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183b2c07-804a-4c40-b9ba-7d1d2438d1d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_actionsLog.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_allskills.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_boost.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_buff.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_butcher.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_clear.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_clear_steam.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_condition.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_consolesize.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_damage.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_debugmap.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_devcam.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_devinfo.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_drop.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_dsDebugger.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_enemyinfo.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_exit.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_fadeinfo.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_find.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_fog.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_getassetid.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_getobjectname.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_getseed.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_getxp.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_globalset.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_godmode.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_injury.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_killboss.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_load.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_locate_traps.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_mapstat.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_minimap.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_nocd.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_nodeathmode.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_npc_animation.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_overlay.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_preset.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_psy.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_questnexttarget.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_questsettarget.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_reputation.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_room.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_save.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_setatr.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_setcaravan.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_sethp.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_setmp.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_sightplacelist.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_skilltest.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_spawn.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_spriteorigin.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_time_scale.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_tp.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_unlock_steam.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_warp.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Base/scr_neoconsole_weather.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Post/scr_neoconsole_lvl.gml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codes/Scripts/Post/scr_neoconsole_time_change.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeoConsole.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeoConsole.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_alarm0Event.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_alarm0Event.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_createEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_createEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_dataLoader.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_dataLoader.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_destroyEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_destroyEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_drawGUIEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_drawGUIEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_persistentRoomController.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_persistentRoomController.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_sessionDataInit.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_sessionDataInit.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Core/nc_stepEvent.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Logic/nc_stepEvent.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_0log.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_0log.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_1help.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_1help.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_UI_visible.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Required/scr_neoconsole_UI_visible.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_enable.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_enable.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_init.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Core/scr_neoconsole_init.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codes/Scripts/scr_neoconsole_s2r_nan.gml" beforeDir="false" afterPath="$PROJECT_DIR$/Codes/Scripts/Required/scr_neoconsole_s2r_nan.gml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NeoConsole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NeoConsole.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-    </list>
+    <list default="true" id="183b2c07-804a-4c40-b9ba-7d1d2438d1d2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,27 +30,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Nylux\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Nylux\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Nylux\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Nylux\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Nylux\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Nylux\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -138,6 +62,7 @@
       <workItem from="1703535410054" duration="235000" />
       <workItem from="1703592092244" duration="7133000" />
       <workItem from="1703720989863" duration="39593000" />
+      <workItem from="1703874604712" duration="1754000" />
     </task>
     <servers />
   </component>
