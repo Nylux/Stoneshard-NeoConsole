@@ -11,7 +11,7 @@ public class NeoConsole : Mod
     public override string Name => "NeoConsole";
     public override string Author => "Nylux";
     public override string Description => "Enables a developer console to cheat or test things with or debug your mods.";
-    public override string Version => "1.1.1";
+    public override string Version => "1.2.1";
     
 
     public override void PatchMod()

@@ -20,3 +20,4 @@
 - Investigate `scr_neoconsole_psy`
 - Investigate `scr_neoconsole_questsettarget`
 - Rewrite `scr_neoconsole_time_change`
+- Rewrite `scr_neoconsole_setatr`
