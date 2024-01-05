@@ -26,7 +26,7 @@
     ds_map_add(commandsMap, "load", "scr_neoconsole_load")
     ds_map_add(commandsMap, "killboss", "scr_neoconsole_killboss")
     ds_map_add(commandsMap, "butcher", "scr_neoconsole_butcher")
-    ds_map_add(commandsMap, "skills", "scr_neoconsole_allskills")
+    ds_map_add(commandsMap, "skill", "scr_neoconsole_allskills")
     ds_map_add(commandsMap, "setcondition", "scr_neoconsole_condition")
     ds_map_add(commandsMap, "setpsy", "scr_neoconsole_psy")
     ds_map_add(commandsMap, "setrep", "scr_neoconsole_reputation")
