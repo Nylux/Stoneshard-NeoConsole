@@ -11,7 +11,7 @@ public class NeoConsole : Mod
     public override string Name => "NeoConsole";
     public override string Author => "Nylux";
     public override string Description => "Enables a developer console to cheat or test things with or debug your mods.";
-    public override string Version => "1.2.1";
+    public override string Version => "1.2.2";
     
 
     public override void PatchMod()
@@ -91,6 +91,7 @@ public class NeoConsole : Mod
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_tp.gml"), "scr_neoconsole_tp");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_warp.gml"), "scr_neoconsole_warp");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_weather.gml"), "scr_neoconsole_weather");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_gold.gml"), "scr_neoconsole_gold");
         
         // STAGE 4 : POST
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_lvl.gml"), "scr_neoconsole_lvl");
