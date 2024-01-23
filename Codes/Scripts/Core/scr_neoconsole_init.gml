@@ -61,6 +61,7 @@
     ds_map_add(commandsMap, "getseed", "scr_neoconsole_getseed")
     ds_map_add(commandsMap, "nocd", "scr_neoconsole_nocd")
     ds_map_add(commandsMap, "gold", "scr_neoconsole_gold")
+    ds_map_add(commandsMap, "setobjatr", "scr_neoconsole_setobjectatr")
 
 
     ds_map_add(helpSyntaxMap, "log", "log [message]")
@@ -123,6 +124,7 @@
     ds_map_add(helpSyntaxMap, "sethp", "sethp [amount]")
     ds_map_add(helpSyntaxMap, "setmp", "setmp [amount]")
     ds_map_add(helpSyntaxMap, "gold", "gold [amount]")
+    ds_map_add(helpSyntaxMap, "setobjatr", "setobjatr [object] [attribute_name] [value]")
 
     ds_map_add(helpUsageMap, "log", ["Arguments :", "    message : The message to log to the console.", "Description :", "Logs given message to the console."])
     ds_map_add(helpUsageMap, "help", ["Arguments :", "    command : Optional. The command you want to know more about", "Description :", "Displays all available command or help about a specific command if one was provided."])
@@ -183,4 +185,5 @@
     ds_map_add(helpUsageMap, "sethp", ["Arguments :", "    amount : The amount of health to set the player to.", "Description :", "Sets player's health to provided value."])
     ds_map_add(helpUsageMap, "setmp", ["Arguments :", "    amount : The amount of mana to set the player to.", "Description :", "Sets player's mana to provided value."])
     ds_map_add(helpUsageMap, "gold", ["Arguments :", "    amount : The amount of gold to add to the player.", "Description :", "Adds specified amount of gold to the player."])
+    ds_map_add(helpUsageMap, "setobjatr", ["Arguments :", "    object_id : The id of the object to modify.", "    attribute_name : The name of the attribute to modify.", "    value : The new value for the provided attribute.", "Description :", "Sets an object's given attribute to provided value."])
 }

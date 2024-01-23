@@ -10,8 +10,8 @@ public class NeoConsole : Mod
 {
     public override string Name => "NeoConsole";
     public override string Author => "Nylux";
-    public override string Description => "Enables a developer console to cheat or test things with or debug your mods.";
-    public override string Version => "1.2.2";
+    public override string Description => "Enables a developer console to cheat, test things with or debug your mods.";
+    public override string Version => "1.2.3";
     
 
     public override void PatchMod()
@@ -92,6 +92,7 @@ public class NeoConsole : Mod
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_warp.gml"), "scr_neoconsole_warp");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_weather.gml"), "scr_neoconsole_weather");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_gold.gml"), "scr_neoconsole_gold");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_setobjectatr.gml"), "scr_neoconsole_setobjectatr");
         
         // STAGE 4 : POST
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_lvl.gml"), "scr_neoconsole_lvl");
