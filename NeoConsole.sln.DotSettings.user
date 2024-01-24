@@ -1,11 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=B_003A_005CGames_005CtModLoader_005Cdotnet_005C6_002E0_002E0_005Cshared_005CMicrosoft_002ENETCore_002EApp_005C6_002E0_002E0_005CSystem_002EObjectModel_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=B_003A_005CGames_005CtModLoader_005Cdotnet_005C6_002E0_002E0_005Cshared_005CMicrosoft_002ENETCore_002EApp_005C6_002E0_002E0_005CSystem_002ERuntime_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=B_003A_005CWORK_005CMODDING_005Cstoneshard_002Dmods_005CModShardLauncher_005Cbin_005CDebug_005Cnet6_002E0_002Dwindows_005CModShardLauncher_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=B_003A_005CWORK_005CMODDING_005Cstoneshard_002Dmods_005CModShardLauncher_005Cbin_005CDebug_005Cnet6_002E0_002Dwindows_005CUndertaleModLib_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=B_003A_005CWORK_005CMODDING_005Cstoneshard_002Dmods_005CModShardLauncher_005Cbin_005CDebug_005Cnet6_002E0_002Dwindows_005CUndertaleModTool_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
-  &lt;Assembly Path="B:\WORK\MODDING\stoneshard-mods\ModShardLauncher\bin\Debug\net6.0-windows\ModShardLauncher.dll" /&gt;&#xD;
-  &lt;Assembly Path="B:\WORK\MODDING\stoneshard-mods\ModShardLauncher\bin\Debug\net6.0-windows\UndertaleModLib.dll" /&gt;&#xD;
-  &lt;Assembly Path="B:\WORK\MODDING\stoneshard-mods\ModShardLauncher\bin\Debug\net6.0-windows\UndertaleModTool.dll" /&gt;&#xD;
+  &lt;Assembly Path="B:\WORK\MODDING\stoneshard-mods\Tools\MSL\ModShardLauncher-fork\bin\Debug\net6.0-windows\ModShardLauncher.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=neoconsole/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Nylux/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

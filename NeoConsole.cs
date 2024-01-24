@@ -10,15 +10,15 @@ public class NeoConsole : Mod
 {
     public override string Name => "NeoConsole";
     public override string Author => "Nylux";
-    public override string Description => "Enables a developer console to cheat or test things with or debug your mods.";
-    public override string Version => "1.2.2";
+    public override string Description => "Enables a developer console to cheat, test things with or debug your mods.";
+    public override string Version => "1.2.3";
     
 
     public override void PatchMod()
-    {
+    { 
         LoadNeoConsoleScripts();
         InitNeoConsole();
-        //IsolateInput(); // Requires assembly editing, which is unsupported rn
+        IsolateInput();
     }
 
     /// <summary>
@@ -108,9 +108,9 @@ public class NeoConsole : Mod
         oNeoconsole.Persistent = true;
         
         // Spawning o_neoconsole and keeping it persistently loaded
-        ModLoader.InsertDecompiledCode(ModFiles.GetCode("nc_sessionDataInit.gml"), "gml_GlobalScript_scr_sessionDataInit", 51);
-        ModLoader.InsertDecompiledCode(ModFiles.GetCode("nc_persistentRoomController.gml"), "gml_Object_persistentRoomController_Other_11", 19);
-        ModLoader.InsertDecompiledCode(ModFiles.GetCode("nc_dataLoader.gml"), "gml_Object_o_dataLoader_Other_10", 7);
+        ModLoader.InsertGMLString(ModFiles.GetCode("nc_sessionDataInit.gml"), "gml_GlobalScript_scr_sessionDataInit", 51);
+        ModLoader.InsertGMLString(ModFiles.GetCode("nc_persistentRoomController.gml"), "gml_Object_persistentRoomController_Other_11", 19);
+        ModLoader.InsertGMLString(ModFiles.GetCode("nc_dataLoader.gml"), "gml_Object_o_dataLoader_Other_10", 7);
         
         
         // Adding o_neoconsole's Create Event
@@ -118,7 +118,7 @@ public class NeoConsole : Mod
         var create = new UndertaleGameObject.Event();
         create.Actions.Add(new UndertaleGameObject.EventAction()
         {
-            CodeId = ModLoader.GetCode("gml_Object_o_neoconsole_Create_0")
+            CodeId = ModLoader.GetUMTCodeFromFile("gml_Object_o_neoconsole_Create_0")
         });
         oNeoconsole.Events[0].Add(create);
 
@@ -128,7 +128,7 @@ public class NeoConsole : Mod
         var destroy = new UndertaleGameObject.Event();
         destroy.Actions.Add(new UndertaleGameObject.EventAction()
         {
-            CodeId = ModLoader.GetCode("gml_Object_o_neoconsole_Destroy_0")
+            CodeId = ModLoader.GetUMTCodeFromFile("gml_Object_o_neoconsole_Destroy_0")
         });
         oNeoconsole.Events[1].Add(destroy);
         
@@ -138,7 +138,7 @@ public class NeoConsole : Mod
         var alarm0 = new UndertaleGameObject.Event();
         alarm0.Actions.Add(new UndertaleGameObject.EventAction()
         {
-            CodeId = ModLoader.GetCode("gml_Object_o_neoconsole_Alarm_0")
+            CodeId = ModLoader.GetUMTCodeFromFile("gml_Object_o_neoconsole_Alarm_0")
         });
         oNeoconsole.Events[2].Add(alarm0);
         
@@ -149,7 +149,7 @@ public class NeoConsole : Mod
         step.EventSubtypeStep = EventSubtypeStep.Step;
         step.Actions.Add(new UndertaleGameObject.EventAction()
         {
-            CodeId = ModLoader.GetCode("gml_Object_o_neoconsole_Step_0")
+            CodeId = ModLoader.GetUMTCodeFromFile("gml_Object_o_neoconsole_Step_0")
         });
         oNeoconsole.Events[3].Add(step);
 
@@ -160,33 +160,52 @@ public class NeoConsole : Mod
         drawGui.EventSubtypeDraw = EventSubtypeDraw.DrawGUI;
         drawGui.Actions.Add(new UndertaleGameObject.EventAction()
         {
-            CodeId = ModLoader.GetCode("gml_Object_o_neoconsole_DrawGUI_0")
+            CodeId = ModLoader.GetUMTCodeFromFile("gml_Object_o_neoconsole_DrawGUI_0")
         });
         oNeoconsole.Events[8].Add(drawGui);
     }
 
     /// <summary>
-    /// Hooks the menus and actions that can prevent NeoConsole from using input as text. (REQUIRES DISASSEMBLY EDITING, WHICH IS UNSUPPORTED RN)
+    /// Hooks the menus and actions that can prevent NeoConsole from using input as text.
     /// </summary>
     public void IsolateInput()
     {
-        ModLoader.ReplaceDecompiledCode("if (!global.consoleEnabled && !global.neoconsole_enabled)", "gml_GlobalScript_scr_is_pressed_key", 2);
-        ModLoader.ReplaceDecompiledCode("if (!global.consoleEnabled && !global.neoconsole_enabled)", "gml_GlobalScript_scr_is_key", 2);
-        ModLoader.ReplaceDecompiledCode("if (!global.consoleEnabled && !global.neoconsole_enabled)", "gml_GlobalScript_scr_keyboard_control", 4);
-        ModLoader.ReplaceDecompiledCode("if (!global.consoleEnabled && !global.neoconsole_enabled)", "gml_Object_oCamera_Step_1", 12);
-        ModLoader.ReplaceDecompiledCode("if (!global.consoleEnabled && !global.neoconsole_enabled)", "gml_Object_o_Attitude_Step_1", 1);
-        ModLoader.ReplaceDecompiledCode("if (!global.consoleEnabled && !global.neoconsole_enabled)", "gml_Object_o_music_button_Step_1", 0);
+        // GML Injections
         
-        ModLoader.ReplaceDecompiledCode("if global.consoleEnabled || global.neoconsole_enabled", "gml_Object_o_inv_switch_Other_10", 12);
+        ModLoader.LoadGML("gml_GlobalScript_scr_is_pressed_key").MatchFrom("if (!global.consoleEnabled)")
+            .ReplaceBy("if (!global.consoleEnabled && !global.neoconsole_enabled)").Save();
         
-        /*
-        File.WriteAllText(Directory.GetCurrentDirectory() + "\\assembly1.txt", ModLoader.GetDisassemblyCode("gml_Object_o_button_actionkey_Step_1"));
-        var text = File.ReadAllText(Directory.GetCurrentDirectory() + "\\assembly1.txt");
-        text = text.Replace("bf [2]", "bf [800]\n\npushglb.v global.neoconsole_enabled\nconv.v.b\nnot.b\nb [801]\n\n:[800]\npush.e 0\n\n:[801]\nbf [2]\n");
-        File.WriteAllText(Directory.GetCurrentDirectory() + "\\assembly1.txt", text);
-        ModLoader.SetDisassemblyCode(File.ReadAllText(Directory.GetCurrentDirectory() + "\\assembly1.txt"), "gml_Object_o_button_actionkey_Step_1");
-        */
+        ModLoader.LoadGML("gml_GlobalScript_scr_is_key").MatchFrom("if (!global.consoleEnabled)")
+            .ReplaceBy("if (!global.consoleEnabled && !global.neoconsole_enabled)").Save();
+
+        ModLoader.LoadGML("gml_GlobalScript_scr_keyboard_control").MatchFrom("if (!global.consoleEnabled)")
+            .ReplaceBy("if (!global.consoleEnabled && !global.neoconsole_enabled)").Save();
         
-        //ModLoader.ReplaceDecompiledCode("if (!global.consoleEnabled && !global.neoconsole_enabled)", "gml_Object_o_player_Step_0", 240);
+        ModLoader.LoadGML("gml_Object_oCamera_Step_1").MatchFrom("if (!global.consoleEnabled)")
+            .ReplaceBy("if (!global.consoleEnabled && !global.neoconsole_enabled)").Save();
+        
+        ModLoader.LoadGML("gml_Object_o_Attitude_Step_1").MatchFrom("if (!global.consoleEnabled)")
+            .ReplaceBy("if (!global.consoleEnabled && !global.neoconsole_enabled)").Save();
+        
+        ModLoader.LoadGML("gml_Object_o_music_button_Step_1").MatchFrom("if (!global.consoleEnabled)")
+            .ReplaceBy("if (!global.consoleEnabled && !global.neoconsole_enabled)").Save();
+        
+        ModLoader.LoadGML("gml_Object_o_inv_switch_Other_10").MatchFrom("if global.consoleEnabled")
+            .ReplaceBy("if global.consoleEnabled || global.neoconsole_enabled").Save();
+
+
+        // Assembly Injections
+
+        ModLoader.LoadAssemblyAsString("gml_Object_o_button_actionkey_Step_1")
+            .MatchBelow(":[0]", 10)
+            .ReplaceBy(ModFiles, "actionKeyStep.asm")
+            // .Peek()
+            .Save();
+
+        ModLoader.LoadAssemblyAsString("gml_Object_o_player_Step_0")
+            .MatchBelow("pushglb.v global.consoleEnabled", 4)
+            .ReplaceBy(ModFiles, "playerStep.asm") // Make sure the `bf` instruction at the end targets the ** same label consoleEnabled targets + 1 **
+            // .Peek()
+            .Save();
     }
 }
