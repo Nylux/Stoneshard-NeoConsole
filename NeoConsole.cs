@@ -92,6 +92,7 @@ public class NeoConsole : Mod
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_warp.gml"), "scr_neoconsole_warp");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_weather.gml"), "scr_neoconsole_weather");
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_gold.gml"), "scr_neoconsole_gold");
+        ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_setobjectatr.gml"), "scr_neoconsole_setobjectatr");
         
         // STAGE 4 : POST
         ModLoader.AddFunction(ModFiles.GetCode("scr_neoconsole_lvl.gml"), "scr_neoconsole_lvl");
