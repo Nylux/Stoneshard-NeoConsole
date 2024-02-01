@@ -1,0 +1,54 @@
+name: Github Release
+on: 
+  workflow_dispatch:
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+  MOD_NAME: "MyMod"
+  MOD_VERSION: "0.0.0"
+  MOD_DESCRIPTION: "My mod description"
+
+
+jobs:
+  build-module:
+    - name: Build Module
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET 6.0
+        uses: actions/setup-dotnet@master
+        with:
+            dotnet-version: 6.0.x
+
+      - name: Download .sml Packer
+        run: echo "TODO"
+
+      - name: Pack .sml
+        run: echo "TODO"
+
+      - name: Download Parser
+        run: echo "TODO"
+
+      - name: Parse Name / Version / Description
+        run: echo "TODO"
+
+      -name: Upload .sml artifact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: ${{ MOD_NAME  }}.sml
+          path: ./mod.sml
+
+  gh-release:
+    - name: Release on Github
+      needs: ["build-module"]
+      uses: BUTR/workflows/.github/workflows/release-github.yml@master
+      with:
+        mod_id: ${{ MOD_NAME }}
+        mod_version: ${{ MOD_VERSION }}
+        mod_description: ${{ MOD_DESCRIPTION }}
+        artifact_name: ${{ MOD_NAME}}.sml
