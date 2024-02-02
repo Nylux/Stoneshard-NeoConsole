@@ -27,15 +27,17 @@ jobs:
       # - name: Pack .sml
       #   run: echo "TODO"
 
-      - name: Parse Name / Version / Description
+      - name: Parsing / Settings Env Vars / 
         run: |
           NAME=$(grep -oP 'Name => "\K[^"]+' ${{ env.MOD_FILE }})
           VERSION=$(grep -oP 'Version => "\K[^"]+' ${{ env.MOD_FILE }})
           DESCRIPTION=$(grep -oP 'Description => "\K[^"]+' ${{ env.MOD_FILE }})
+          
           echo "NAME=$NAME" >> $GITHUB_ENV
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "DESCRIPTION=$DESCRIPTION" >> $GITHUB_ENV
-          echo $NAME $VERSION $DESCRIPTION
+          
+          echo $NAME - $VERSION - $DESCRIPTION
 
       # - name: Upload .sml artifact
       #   uses: actions/upload-artifact@v4
