@@ -29,9 +29,14 @@ jobs:
 
       - name: Parse Name / Version / Description
         run: |
-          echo "MOD_NAME=$(awk -F '\"' '/public override string Name =>/ {print $2}' $MOD_FILE)" >> $GITHUB_ENV
-          echo "MOD_VERSION=$(awk -F '\"' '/public override string Version =>/ {print $2}' $MOD_FILE)" >> $GITHUB_ENV
-          echo "MOD_DESCRIPTION=$(awk -F '\"' '/public override string Description =>/ {print $2}' $MOD_FILE)" >> $GITHUB_ENV
+          NAME=$(grep -oP 'Name => "\K[^"]+' ${{ env.CS_FILE_NAME }})
+          VERSION=$(grep -oP 'Version => "\K[^"]+' ${{ env.CS_FILE_NAME }})
+          DESCRIPTION=$(grep -oP 'Description => "\K[^"]+' ${{ env.CS_FILE_NAME }})
+          echo "NAME=$NAME" >> $GITHUB_ENV
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "DESCRIPTION=$DESCRIPTION" >> $GITHUB_ENV
+          echo $NAME $VERSION $DESCRIPTION
+
 
           echo $MOD_NAME $MOD_VERSION $MOD_DESCRIPTION
 
