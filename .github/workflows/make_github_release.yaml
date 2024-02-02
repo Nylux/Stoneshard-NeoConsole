@@ -7,7 +7,7 @@ env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
-  MOD_FILE: "NeoConsole.cs"
+  MOD_FILE: "./NeoConsole.cs"
 
 jobs:
   build-module:
