@@ -29,9 +29,9 @@ jobs:
 
       - name: Parse Name / Version / Description
         run: |
-          NAME=$(grep -oP 'Name => "\K[^"]+' ${{ env.CS_FILE_NAME }})
-          VERSION=$(grep -oP 'Version => "\K[^"]+' ${{ env.CS_FILE_NAME }})
-          DESCRIPTION=$(grep -oP 'Description => "\K[^"]+' ${{ env.CS_FILE_NAME }})
+          NAME=$(grep -oP 'Name => "\K[^"]+' ${{ env.MOD_FILE }})
+          VERSION=$(grep -oP 'Version => "\K[^"]+' ${{ env.MOD_FILE }})
+          DESCRIPTION=$(grep -oP 'Description => "\K[^"]+' ${{ env.MOD_FILE }})
           echo "NAME=$NAME" >> $GITHUB_ENV
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "DESCRIPTION=$DESCRIPTION" >> $GITHUB_ENV
