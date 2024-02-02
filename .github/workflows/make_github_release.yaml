@@ -37,9 +37,6 @@ jobs:
           echo "DESCRIPTION=$DESCRIPTION" >> $GITHUB_ENV
           echo $NAME $VERSION $DESCRIPTION
 
-
-          echo $MOD_NAME $MOD_VERSION $MOD_DESCRIPTION
-
       # - name: Upload .sml artifact
       #   uses: actions/upload-artifact@v4
       #   with: 
