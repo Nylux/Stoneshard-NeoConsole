@@ -8,10 +8,6 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
   MOD_FILE: "NeoConsole.cs"
-  MOD_NAME: ""
-  MOD_VERSION: ""
-  MOD_DESCRIPTION: ""
-
 
 jobs:
   build-module:
@@ -33,10 +29,11 @@ jobs:
 
       - name: Parse Name / Version / Description
         run: |
-          MOD_NAME = $(grep -oP 'public override string Name => "\K[^"]+' $MOD_FILE)
-          MOD_VERSION = $(grep -oP 'public override string Version => "\K[^"]+' $MOD_FILE)
-          MOD_DESCRIPTION = $(grep -oP 'public override string Description => "\K[^"]+' $MOD_FILE)
-          echo ${{ MOD_NAME }} ${{ MOD_VERSION }} ${{ MOD_DESCRIPTION }}
+          echo "MOD_NAME=$(grep -oP 'public override string Name => "\K[^"]+' $MOD_FILE)" >> $GITHUB_ENV
+          echo "MOD_VERSION=$(grep -oP 'public override string Version => "\K[^"]+' $MOD_FILE)" >> $GITHUB_ENV
+          echo "MOD_DESCRIPTION=$(grep -oP 'public override string Description => "\K[^"]+' $MOD_FILE)" >> $GITHUB_ENV
+          
+          echo ${{ env.MOD_NAME }} ${{ env.MOD_VERSION }} ${{ env.MOD_DESCRIPTION }}
 
       # - name: Upload .sml artifact
       #   uses: actions/upload-artifact@v4
@@ -48,10 +45,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: ["build-module"]
     steps:
-    - name: Release on Github
-      uses: BUTR/workflows/.github/workflows/release-github.yml@master
+    - name: Create Release
+      uses: ncipollo/release-action@v1.13.0
       with:
-        mod_id: ${{ MOD_NAME }}
-        mod_version: ${{ MOD_VERSION }}
-        mod_description: ${{ MOD_DESCRIPTION }}
-        artifact_name: ${{ MOD_NAME}}.sml
+        artifactErrorsFailBuild: true
+        artifacts: ${{ env.MOD_NAME }}.sml
+        body: ${{ env.MOD_DESCRIPTION }}
+        draft: true
+        name: ${{ env.MOD_VERSION }}
+        skipIfReleaseExists: true
+        tag: v${{ env.MOD_VERSION }}
