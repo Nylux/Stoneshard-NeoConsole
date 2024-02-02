@@ -30,10 +30,10 @@ jobs:
       - name: Parse Name / Version / Description
         run: |
           echo "MOD_NAME=grep -oP 'public override string Name => "\K[^"]+' $MOD_FILE" >> $GITHUB_ENV
-          echo "MOD_VERSION=grep -oP 'public override string Version => "\K[^"]+' $$MOD_FILE" >> $GITHUB_ENV
+          echo "MOD_VERSION=grep -oP 'public override string Version => "\K[^"]+' $MOD_FILE" >> $GITHUB_ENV
           echo "MOD_DESCRIPTION=grep -oP 'public override string Description => "\K[^"]+' $MOD_FILE" >> $GITHUB_ENV
           
-          echo ${{ env.MOD_NAME }} ${{ env.MOD_VERSION }} ${{ env.MOD_DESCRIPTION }}
+          echo $MOD_NAME $MOD_VERSION $MOD_DESCRIPTION
 
       # - name: Upload .sml artifact
       #   uses: actions/upload-artifact@v4
