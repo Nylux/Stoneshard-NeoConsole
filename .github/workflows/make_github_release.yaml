@@ -7,45 +7,48 @@ env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
-  MOD_NAME: "MyMod"
-  MOD_VERSION: "0.0.0"
-  MOD_DESCRIPTION: "My mod description"
+  MOD_FILE: "NeoConsole.cs"
+  MOD_NAME: ""
+  MOD_VERSION: ""
+  MOD_DESCRIPTION: ""
 
 
 jobs:
   build-module:
-    - name: Build Module
-      runs-on: ubuntu-latest
-      steps:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
       
-      - name: Setup .NET 6.0
-        uses: actions/setup-dotnet@master
-        with:
-            dotnet-version: 6.0.x
+      # - name: Setup .NET 6.0
+      #   uses: actions/setup-dotnet@master
+      #   with:
+      #     dotnet-version: 6.0.x
 
-      - name: Download .sml Packer
-        run: echo "TODO"
+      # - name: Download .sml Packer
+      #   run: echo "TODO"
 
-      - name: Pack .sml
-        run: echo "TODO"
-
-      - name: Download Parser
-        run: echo "TODO"
+      # - name: Pack .sml
+      #   run: echo "TODO"
 
       - name: Parse Name / Version / Description
-        run: echo "TODO"
+        run: |
+          MOD_NAME = $(grep -oP 'public override string Name => "\K[^"]+' $MOD_FILE)
+          MOD_VERSION = $(grep -oP 'public override string Version => "\K[^"]+' $MOD_FILE)
+          MOD_DESCRIPTION = $(grep -oP 'public override string Description => "\K[^"]+' $MOD_FILE)
+          echo ${{ MOD_NAME }} ${{ MOD_VERSION }} ${{ MOD_DESCRIPTION }}
 
-      -name: Upload .sml artifact
-        uses: actions/upload-artifact@v4
-        with: 
-          name: ${{ MOD_NAME  }}.sml
-          path: ./mod.sml
+      # - name: Upload .sml artifact
+      #   uses: actions/upload-artifact@v4
+      #   with: 
+      #     name: ${{ MOD_NAME  }}.sml
+      #     path: ./mod.sml
 
   gh-release:
+    runs-on: ubuntu-latest
+    needs: ["build-module"]
+    steps:
     - name: Release on Github
-      needs: ["build-module"]
       uses: BUTR/workflows/.github/workflows/release-github.yml@master
       with:
         mod_id: ${{ MOD_NAME }}
