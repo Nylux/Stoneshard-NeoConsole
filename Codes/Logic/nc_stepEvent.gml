@@ -1,4 +1,4 @@
-﻿ if (keyboard_check_pressed(global.neoconsole_toggle_key)) 
+﻿if (keyboard_check_pressed(global.neoconsole_toggle_key)) 
     scr_neoconsole_enable()
 
 if global.neoconsole_enabled = false 

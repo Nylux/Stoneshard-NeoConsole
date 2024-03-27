@@ -12,7 +12,8 @@ public class NeoConsole : Mod
     public override string Author => "Nylux";
     public override string Description => "Enables a developer console to cheat, test things with or debug your mods.";
     public override string Version => "1.2.4";
-    
+    public override string TargetVersion => "0.8.2.10";
+
 
     public override void PatchMod()
     { 
@@ -106,6 +107,7 @@ public class NeoConsole : Mod
         // Creating o_neoconsole gameobject 
         UndertaleGameObject oNeoconsole = Msl.AddObject("o_neoconsole");
         oNeoconsole.Persistent = true;
+        oNeoconsole.Visible = true;
         
         // Spawning o_neoconsole and keeping it persistently loaded
         Msl.InsertGMLString(ModFiles.GetCode("nc_sessionDataInit.gml"), "gml_GlobalScript_scr_sessionDataInit", 51);
@@ -166,7 +168,7 @@ public class NeoConsole : Mod
     }
 
     /// <summary>
-    /// Hooks the menus and actions that can prevent NeoConsole from using input as text.
+    /// Hooks the menus and actions that can prevent NeoConsole from using input as text and accidentally trigger actions while typing.
     /// </summary>
     public void IsolateInput()
     {
@@ -192,6 +194,9 @@ public class NeoConsole : Mod
         
         Msl.LoadGML("gml_Object_o_inv_switch_Other_10").MatchFrom("if global.consoleEnabled")
             .ReplaceBy("if global.consoleEnabled || global.neoconsole_enabled").Save();
+
+        Msl.LoadGML("gml_Object_o_abilities_Step_1").MatchFrom("if (!global.consoleEnabled)")
+            .ReplaceBy("if (!global.consoleEnabled && !global.neoconsole_enabled)").Save();
 
 
         // Assembly Injections

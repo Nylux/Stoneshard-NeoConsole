@@ -1,5 +1,5 @@
-﻿ global.neoconsole_enabled = 0 
-global.neoconsole_toggle_key = vk_f2 
+﻿global.neoconsole_enabled = 0 
+global.neoconsole_toggle_key = vk_f2
 text_ = ""
 text_def = ">. " 
 text_[0] = ""
